@@ -1,4 +1,5 @@
 import ApplicationLogo from '@/Components/ApplicationLogo';
+import {logo} from "../../assets/images" 
 import { Link } from '@inertiajs/react';
 
 export default function Guest({ children }) {
@@ -6,7 +7,7 @@ export default function Guest({ children }) {
         <div className="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100 dark:bg-gray-900">
             <div>
                 <Link href="/">
-                    <ApplicationLogo className="w-20 h-20 fill-current text-gray-500" />
+                <img src={logo} alt="book-club-logo" className="h-20 mb-5" />
                 </Link>
             </div>
 
