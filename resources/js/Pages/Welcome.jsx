@@ -1,24 +1,27 @@
-import { Link, Head } from '@inertiajs/react';
-import Navbar from './Navbar/Navbar';
+import { Link, Head } from "@inertiajs/react";
+import Navbar from "./Navbar/Navbar";
+import Carousel from "./Carousel";
+import CategorySection from "./CategorySection";
 
-
-
-export default function Welcome({ auth }) {
-    
+export default function Welcome({ auth, books }) {
     return (
         <>
-            <Head title="Welcome" />
-            <Navbar auth={auth}/>
-            <div className='max-h-96 bg-gray-300 '>
-                <div className='w-full h-96 max-w-screen-xl mx-auto px-10'>
-                <div className='flex flex-row items-center justify-center' >
-                    <div className='flex-1 ml-auto mr-0'>The Bookworm Editors'</div>
-                    <div className='flex-1'>sd</div>
-                </div>
-                </div>
+            <Head title="Book Club" />
+            <Navbar auth={auth} />
+            <Carousel />
+            <CategorySection />
+            <div className="grid grid-cols-5 max-w-screen-2xl mx-auto">
+            {books.map((book) => {
+                return <div className="border flex flex-col py-5">
+                        <img src={book.image} alt={book.image} className="h-40 mx-auto" />
+                        <div className="px-5 py-3">
+                            <div className="font-semibold">{book.title}</div>
+                            <div className="font-light text-sm opacity-60">{book.author}</div>
+                        </div>
+                    </div>
+                ;
+            })}
             </div>
-
-           
         </>
 
         // <>
@@ -29,7 +32,7 @@ export default function Welcome({ auth }) {
         //             {navLinks?.map(item =><div key={item.id} className='text-black text-lg font-sans font-semibold pt-3'>{item.title}</div>)}
         //         </div>
         //     </nav>
-        
+
         // </>
     );
 }

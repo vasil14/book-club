@@ -7,13 +7,13 @@ const AccountSidebar = ({ auth, toggleOpen, open }) => {
     return (
         <div className="w-full h-full top-0 overflow-hidden">
             <div
-                className={`inset-0 fixed h-full w-full bg-gray-900 delay-700 transition-opacity ${
+                className={`inset-0 fixed h-full w-full bg-gray-900 delay-700 transition-opacity z-40 ${
                     open ? "opacity-50 block" : "opacity-0 hidden"
                 }`}
                 onClick={toggleOpen}
             ></div>
             <div
-                className={`flex flex-col top-0 right-0 fixed w-[400px] bg-white h-full ${
+                className={`flex flex-col top-0 right-0 fixed w-[400px] bg-white h-full z-50 ${
                     open ? "translate-x-0 block" : "translate-x-full"
                 } duration-500 ease-in-out`}
             >

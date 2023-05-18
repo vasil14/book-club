@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('author');
-            $table->string('description');
+            $table->text('description');
+            $table->string('year');
             $table->string('image');
             $table->integer('pages');
             $table->timestamps();
