@@ -13,8 +13,8 @@ const Carousel = () => {
             <Swiper
                 pagination={true}
                 loop={true}
-                speed={1000}
-                spaceBetween={70}
+                speed={1200}
+                spaceBetween={200}
                 modules={[Pagination]}
                 className="mySwiper max-w-screen-xl"
             >

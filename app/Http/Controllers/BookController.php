@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
-use Illuminate\Http\Request;
 use Inertia\Inertia;
 
 class BookController extends Controller
@@ -12,5 +11,13 @@ class BookController extends Controller
     {
       return  Inertia::render('/',Book::all());
 
+    }
+
+
+    public function show($id)
+    {
+      $book = Book::where('id', $id)->get()->toArray();
+
+      return Inertia::render('SingleProduct', ['book' => $book]);
     }
 }

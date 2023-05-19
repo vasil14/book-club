@@ -22,11 +22,11 @@ Route::get('/', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
-        'books'       =>Book::all()
+        'books' => Book::paginate(15)
     ]);
 });
 
-Route::get('/books', [BookController::class, 'index']);
+Route::get('/book/{id}', [BookController::class, 'show']);
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
@@ -38,4 +38,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

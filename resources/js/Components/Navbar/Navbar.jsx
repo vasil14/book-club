@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "@inertiajs/react";
 import { logo } from "../../../assets/images";
 import { navLinks } from "../../../assets/constants";
 import AccountDropdown from "./AccountDropdown";
@@ -11,10 +12,12 @@ const Navbar = ({ auth }) => {
         setOpen((previousState) => !previousState);
     };
     return (
-        <nav className="h-full border-b-2">
+        <nav className="h-full border-b">
             <div className="max-w-screen-2xl mx-auto h-20 items-center flex flex-row justify-between px-10">
                 <div className="w-full flex flex-row gap-10 items-center py-5">
-                    <img src={logo} alt="book-club-logo" className="h-12" />
+                    <Link href="/">
+                        <img src={logo} alt="book-club-logo" className="h-12" />
+                    </Link>
                     {navLinks?.map((item) => (
                         <div
                             key={item.id}
@@ -26,7 +29,7 @@ const Navbar = ({ auth }) => {
                 </div>
                 <AccountDropdown toggleOpen={toggleOpen} />
             </div>
-            <AccountSidebar auth={auth} toggleOpen={toggleOpen} open={open}/>
+            <AccountSidebar auth={auth} toggleOpen={toggleOpen} open={open} />
         </nav>
     );
 };
