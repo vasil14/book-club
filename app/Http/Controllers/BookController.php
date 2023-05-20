@@ -17,7 +17,10 @@ class BookController extends Controller
     public function show($id)
     {
       $book = Book::where('id', $id)->get()->toArray();
+      $book2 = Book::where('id', '4')->get();
 
-      return Inertia::render('SingleProduct', ['book' => $book]);
+      // $similar_books = Book::where('category', $book->category)->get()->take(3);
+
+      return Inertia::render('SingleProduct', ['book' => $book, 'book2' => $book2]);
     }
 }
