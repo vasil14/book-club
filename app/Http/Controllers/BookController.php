@@ -16,7 +16,7 @@ class BookController extends Controller
 
     public function show($id)
     {
-      $book = Book::where('id', $id)->get()->toArray();
+      $book = Book::where('id', $id)->get();
       $book2 = Book::where('id', '4')->get();
 
       // $similar_books = Book::where('category', $book->category)->get()->take(3);
