@@ -14,9 +14,8 @@ return new class extends Migration
         Schema::create('ratings', function (Blueprint $table) {
             $table->id();
             $table->integer('book_id');
-            $table->string('comment');
+            $table->integer('user_id');
             $table->integer('rating');
-            $table->ipAddress('user_ip');            
             $table->timestamps();
         });
     }
