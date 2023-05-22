@@ -48,3 +48,8 @@ body {
   height: 6px !important;
   margin-right: 15px !important;
 }
+
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root {
+  /* -webkit-align-items: left !important; */
+  align-items: left !important;
+}
