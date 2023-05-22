@@ -8,8 +8,7 @@ import Avatar from "@mui/material/Avatar";
 import { Rating } from "@mui/material";
 
 function TabPanel(props) {
-  const { children, value, index, description, ...other } = props;
-  console.log(description);
+    const { children, value, index, ...other } = props;
     return (
         <div
             role="tabpanel"
@@ -20,7 +19,7 @@ function TabPanel(props) {
         >
             {value === index && (
                 <Box sx={{ p: 3 }}>
-                    <Typography>{children}</Typography>
+                    {children}
                 </Box>
             )}
         </div>
@@ -40,7 +39,7 @@ function a11yProps(index) {
     };
 }
 
-export default function VerticalTabs() {
+export default function VerticalTabs({ description }) {
     const [value, setValue] = React.useState(0);
 
     const handleChange = (event, newValue) => {
@@ -53,7 +52,7 @@ export default function VerticalTabs() {
                 flexGrow: 1,
                 bgcolor: "background.paper",
                 display: "flex",
-                height: 224,
+                height: 500,
             }}
         >
             <Tabs
@@ -67,17 +66,16 @@ export default function VerticalTabs() {
                     width: 250,
                     paddingTop: 5,
                 }}
+                className="justify-items-start items-start"
             >
-                <Tab label="Reviews" {...a11yProps(0)} />
-                <Tab label="Description" {...a11yProps(1)} />
-                <Tab label="Item Three" {...a11yProps(2)} />
+                <Tab label="Reviews" {...a11yProps(0)} className="font-semibold"  />
+                <Tab label="Description" {...a11yProps(1)} className="font-semibold" />
+                <Tab label="Item Three" {...a11yProps(2)} className="font-semibold" />
             </Tabs>
-            <TabPanel value={value} index={0} style={{ width: "100%" }}>
+            <TabPanel value={value} index={0} style={{ width: "100%" }} className="">
                 <div className="w-full">
                     <div className="border-b w-full flex flex-row justify-between items-baseline">
-                        <div className="text-sm uppercase">
-                            Popular Reviews
-                        </div>
+                        <div className="text-sm uppercase">Popular Reviews</div>
                         <div className="text-xs uppercase">MORE</div>
                     </div>
                     <div className="flex flex-row items-start gap-5 pt-5">
@@ -104,10 +102,13 @@ export default function VerticalTabs() {
                     </div>
                 </div>
             </TabPanel>
-            <TabPanel value={value} index={1}>
-                Item Two
+            <TabPanel value={value} index={1} style={{ width: "100%" }} className="">
+                <div className="flex flex-col gap-5">
+                    <div className="uppercase font-semibold">description</div>
+                    <div>{description}</div>
+                </div>
             </TabPanel>
-            <TabPanel value={value} index={2}>
+            <TabPanel value={value} index={2} style={{ width: "100%" }}>
                 Item Three
             </TabPanel>
         </Box>
