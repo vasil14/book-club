@@ -4,7 +4,7 @@ import { avatar } from "../../../assets/images";
 
 const ReviewTab = () => {
     return (
-        <div className="w-full pt-5 max-w-[870px]">
+        <div className="w-full pt-5 max-w-[850px] pl-5">
             <div className="border-b w-full flex flex-row justify-between items-baseline">
                 <div className="text-sm uppercase">Popular Reviews</div>
                 <div className="text-xs uppercase">MORE</div>

@@ -6,7 +6,7 @@ const BookMainInfo = ({ book }) => {
     console.log(book);
     return (
         <div className=" w-3/4">
-            <div className="flex flex-row border-b-2 pb-14 mr-5">
+            <div className="flex flex-row border-b-2 pb-10 mr-5">
                 <SingleBookImage book={book} />
                 <SingleBookInfo book={book} />
             </div>
