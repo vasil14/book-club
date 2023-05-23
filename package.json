@@ -24,6 +24,7 @@
         "@emotion/react": "^11.11.0",
         "@emotion/styled": "^11.11.0",
         "@inertiajs/react": "^1.0.6",
+        "@phosphor-icons/react": "^2.0.9",
         "antd": "^5.5.1",
         "gsap": "^3.11.5",
         "split-type": "^0.3.3",
