@@ -53,3 +53,19 @@ body {
   /* -webkit-align-items: left !important; */
   align-items: left !important;
 }
+
+
+.ant-tabs-tab {
+    width: 150px !important;
+    margin: 0 !important;
+    justify-content: right !important;
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+    /* padding-right: 35px !important; */
+    text-align: left !important;
+}
+
+.ant-tabs-nav-wrap{
+  padding-top: 10px !important;
+  row-gap: 10px !important;
+}
