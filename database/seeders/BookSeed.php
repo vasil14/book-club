@@ -13,6 +13,12 @@ class BookSeed extends Seeder
     /**
      * Run the database seeds.
      */
+
+    /**
+     * Open Library
+     * https://openlibrary.org/subjects/fiction.json?limit={limit}&offset={offset}
+     */
+
     public function run()
     {
         
@@ -21,7 +27,8 @@ class BookSeed extends Seeder
     $author = 'J.+K.+Rowling';
     // $response = Http::get('https://www.googleapis.com/books/v1/volumes?q=subject:' . $category . '&orderBy=relevance&maxResults=40&key=' . $apiKey);
     $response = Http::get('https://www.googleapis.com/books/v1/volumes?q=inauthor:' . $author . '&orderBy=relevance&maxResults=40&key=' . $apiKey);
-
+    // $response = Http::get('https://openlibrary.org/subjects/fiction.json?limit=1');
+    
     
     if ($response->failed()) {
         // Handle the errorS

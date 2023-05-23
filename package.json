@@ -20,11 +20,11 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
+        "@ant-design/icons": "^5.1.0",
         "@emotion/react": "^11.11.0",
         "@emotion/styled": "^11.11.0",
         "@inertiajs/react": "^1.0.6",
-        "@mui/icons-material": "^5.11.16",
-        "@mui/material": "^5.13.1",
+        "antd": "^5.5.1",
         "gsap": "^3.11.5",
         "split-type": "^0.3.3",
         "swiper": "^9.3.2"
