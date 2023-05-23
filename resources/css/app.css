@@ -15,9 +15,6 @@ body {
 .swiper-slide {
     text-align: center;
     font-size: 18px;
-    /* background: #fff; */
-
-    /* Center slide text vertically */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,29 +28,20 @@ body {
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #2dd4bf !important;
-  width: 6px !important;
-  height: 6px !important;
-  outline: 2px solid  #2dd4bf!important;
-  /* outline-color: #2dd4bf !important; */
-  outline-offset: 3px !important;
-  margin-right: 15px !important;
-
-
+    background-color: #2dd4bf !important;
+    width: 6px !important;
+    height: 6px !important;
+    outline: 2px solid #2dd4bf !important;
+    outline-offset: 3px !important;
+    margin-right: 15px !important;
 }
 
 .swiper-pagination-bullet {
-  background-color: #2dd4bf !important;
-  width: 6px !important;
-  height: 6px !important;
-  margin-right: 15px !important;
+    background-color: #2dd4bf !important;
+    width: 6px !important;
+    height: 6px !important;
+    margin-right: 15px !important;
 }
-
-.css-1h9z7r5-MuiButtonBase-root-MuiTab-root {
-  /* -webkit-align-items: left !important; */
-  align-items: left !important;
-}
-
 
 .ant-tabs-tab {
     width: 150px !important;
@@ -61,11 +49,10 @@ body {
     justify-content: right !important;
     padding-top: 12px !important;
     padding-bottom: 12px !important;
-    /* padding-right: 35px !important; */
     text-align: left !important;
 }
 
-.ant-tabs-nav-wrap{
-  padding-top: 10px !important;
-  row-gap: 10px !important;
+.ant-tabs-nav-wrap {
+    padding-top: 10px !important;
+    row-gap: 10px !important;
 }

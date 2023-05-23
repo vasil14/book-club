@@ -1,7 +1,6 @@
 import React from "react";
-import { Link, Head } from "@inertiajs/react";
-import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
-import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
+import { Link } from "@inertiajs/react";
+import { User, X } from "@phosphor-icons/react";
 
 const AccountSidebar = ({ auth, toggleOpen, open }) => {
     return (
@@ -18,16 +17,16 @@ const AccountSidebar = ({ auth, toggleOpen, open }) => {
                 } duration-500 ease-in-out`}
             >
                 <div className="px-10 py-5 mb-5 flex flex-row justify-between items-center border-b-2">
-                    <div className="flex gap-3 items-center">
-                        <PersonOutlineOutlinedIcon style={{ fontSize: 30 }} />
-                        <span className="text-xl font-semibold">Account</span>
+                    <div className="flex gap-2 items-center">
+                        <User size={25} />
+                        <span className="text-md ">Account</span>
                     </div>
                     <div
-                        className="flex items-center gap-3 cursor-pointer hover:text-emerald-400"
+                        className="flex items-center gap-3 cursor-pointer text-gray-400 hover:text-teal-400"
                         onClick={toggleOpen}
                     >
-                        <span className="">Close</span>
-                        <CloseOutlinedIcon />
+                        <span className="text-sm">Close</span>
+                        <X size={20} />
                     </div>
                 </div>
                 {auth.user ? (

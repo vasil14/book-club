@@ -1,12 +1,9 @@
-import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
+import { User } from "@phosphor-icons/react";
 
 const AccountDropdown = ({ toggleOpen }) => {
     return (
         <div className="" onClick={toggleOpen}>
-            <PersonOutlineOutlinedIcon
-                className="hover:text-teal-400"
-                style={{ fontSize: 35 }}
-            />
+            <User size={25} className="hover:text-teal-400" />
         </div>
     );
 };
