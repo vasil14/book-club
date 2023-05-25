@@ -42,13 +42,13 @@ const SingleBookInfo = ({ book }) => {
                         {show ? "[-] Sow less" : "[+] Show more"}
                     </span>
                     <div className="flex flex-row items-center pt-5">
-                        <div className="w-28 h-24">
+                        <div className="w-28 h-24 hover:bg-teal-50">
                             <Tooltip title="Write a review" className="pt-4">
-                                <div className="flex flex-col items-center">
+                                <div className="flex flex-col items-center cursor-pointer">
                                     <div className="w-[40px] h-[40px] mx-auto">
                                         <Star
                                             size={30}
-                                            className="text-teal-400 cursor-pointer mx-auto"
+                                            className="text-teal-400 mx-auto"
                                             weight="fill"
                                         />
                                     </div>
@@ -56,15 +56,17 @@ const SingleBookInfo = ({ book }) => {
                                 </div>
                             </Tooltip>
                         </div>
-                        <div className="w-28 h-24">
+                        <div
+                            className="w-28 h-24 hover:bg-teal-50 cursor-pointer"
+                            onClick={readToggler}
+                        >
                             {read ? (
                                 <Tooltip title="Read" className="pt-4">
                                     <div className="flex flex-col items-center">
                                         <div className="w-[40px] h-[40px] mx-auto">
                                             <Eye
                                                 size={40}
-                                                className="text-teal-400 cursor-pointer mx-auto"
-                                                onClick={readToggler}
+                                                className="text-teal-400  mx-auto"
                                                 weight="fill"
                                             />
                                         </div>
@@ -73,12 +75,11 @@ const SingleBookInfo = ({ book }) => {
                                 </Tooltip>
                             ) : (
                                 <Tooltip title="Remove" className="pt-4">
-                                    <div className="flex flex-col items-center">
+                                    <div className="flex flex-col items-center cursor-pointer">
                                         <div className="w-[40px] h-[40px] mx-auto">
                                             <Eye
                                                 size={40}
-                                                className="text-teal-400 cursor-pointer mx-auto"
-                                                onClick={readToggler}
+                                                className="text-teal-400 mx-auto"
                                                 weight="light"
                                             />
                                         </div>
@@ -87,15 +88,17 @@ const SingleBookInfo = ({ book }) => {
                                 </Tooltip>
                             )}
                         </div>
-                        <div className="w-28 h-24">
+                        <div
+                            className="w-28 h-24 hover:bg-teal-50 cursor-pointer"
+                            onClick={likeToggler}
+                        >
                             {like ? (
                                 <Tooltip title="Like" className="pt-4">
                                     <div className="flex flex-col items-center">
                                         <div className="w-[40px] h-[40px] mx-auto">
                                             <Heart
                                                 size={30}
-                                                className="text-teal-400 cursor-pointer mx-auto"
-                                                onClick={likeToggler}
+                                                className="text-teal-400 mx-auto"
                                                 weight="fill"
                                             />
                                         </div>
@@ -108,8 +111,7 @@ const SingleBookInfo = ({ book }) => {
                                         <div className="w-[40px] h-[40px] mx-auto">
                                             <Heart
                                                 size={30}
-                                                className="text-teal-400 cursor-pointer mx-auto"
-                                                onClick={likeToggler}
+                                                className="text-teal-400 mx-auto"
                                             />
                                         </div>
                                         <div>Like</div>
@@ -117,15 +119,17 @@ const SingleBookInfo = ({ book }) => {
                                 </Tooltip>
                             )}
                         </div>
-                        <div className="w-28 h-24">
+                        <div
+                            className="w-28 h-24 hover:bg-teal-50 cursor-pointer"
+                            onClick={readListToggler}
+                        >
                             {readList ? (
                                 <Tooltip title="Read List" className="pt-4">
                                     <div className="flex flex-col items-center">
                                         <div className="w-[40px] h-[40px] mx-auto">
                                             <Books
                                                 size={40}
-                                                className="text-teal-400 cursor-pointer mx-auto"
-                                                onClick={readListToggler}
+                                                className="text-teal-400 mx-auto"
                                                 weight="fill"
                                             />
                                         </div>
@@ -138,8 +142,7 @@ const SingleBookInfo = ({ book }) => {
                                         <div className="w-[40px] h-[40px] mx-auto">
                                             <Books
                                                 size={40}
-                                                className="text-teal-400 cursor-pointer mx-auto"
-                                                onClick={readListToggler}
+                                                className="text-teal-400 mx-auto"
                                                 weight="thin"
                                             />
                                         </div>
