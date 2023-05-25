@@ -4,7 +4,7 @@ import { Tooltip } from "antd";
 const SingleBookImage = ({ book }) => {
     return (
         <div className="w-1/3 mx-10 pb-5">
-            <div className="w-52 mx-auto flex flex-col gap-3">
+            <div className="w-72 mx-auto flex flex-col gap-3">
                 <img src={book[0]?.image} alt={book[0]?.image} />
                 <div className="flex flex-row gap-3 items-center mx-auto">
                     <Tooltip title="Read by 2.7k members" color="gray">

@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Tooltip } from "antd";
 import { Eye, Heart, Star, Books } from "@phosphor-icons/react";
+import BookContext from "@/Context/BookContext";
 
 const SingleBookInfo = ({ book }) => {
+    const { executeScroll } = useContext(BookContext);
     const [show, setShow] = useState(false);
     const [read, setRead] = useState(false);
     const [like, setLike] = useState(false);
@@ -36,15 +38,15 @@ const SingleBookInfo = ({ book }) => {
                             : book[0]?.description.substring(0, 160) + "..."}
                     </div>
                     <span
-                        onClick={toggler}
+                        onClick={executeScroll}
                         className="cursor-pointer text-teal-400 text-sm font-semibold"
                     >
-                        {show ? "[-] Sow less" : "[+] Show more"}
+                        [+] Read more
                     </span>
                     <div className="flex flex-row items-center pt-5">
-                        <div className="w-28 h-24 hover:bg-teal-50">
+                        <div className="w-28 h-24 hover:bg-teal-50 cursor-pointer">
                             <Tooltip title="Write a review" className="pt-4">
-                                <div className="flex flex-col items-center cursor-pointer">
+                                <div className="flex flex-col items-center ">
                                     <div className="w-[40px] h-[40px] mx-auto">
                                         <Star
                                             size={30}

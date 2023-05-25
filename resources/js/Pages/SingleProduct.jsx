@@ -3,6 +3,7 @@ import { Breadcrumb } from "antd";
 import MainLayout from "@/Layouts/MainLayout";
 import SingleBook from "@/Components/SinglePageComponents/SingleBook";
 import RelatedBooks from "@/Components/SinglePageComponents/RelatedBooks";
+import { BookProvider } from "@/Context/BookContext";
 
 const SingleProduct = ({ book, auth, book2 }) => {
     return (
@@ -17,7 +18,11 @@ const SingleProduct = ({ book, auth, book2 }) => {
                                     title: <a href="/">Home</a>,
                                 },
                                 {
-                                    title: <a className="text-black" href="">Book Category</a>,
+                                    title: (
+                                        <a className="text-black" href="">
+                                            Book Category
+                                        </a>
+                                    ),
                                 },
                                 {
                                     title: book[0]?.title,
@@ -27,8 +32,10 @@ const SingleProduct = ({ book, auth, book2 }) => {
                     </div>
                 </div>
                 <div className="max-w-screen-2xl px-10 w-full mx-auto mt-16 flex gap-5">
-                    <SingleBook book={book} />
-                    <RelatedBooks book2={book2} />
+                    <BookProvider>
+                        <SingleBook book={book} />
+                        <RelatedBooks book2={book2} />
+                    </BookProvider>
                 </div>
             </MainLayout>
         </>
