@@ -44,113 +44,99 @@ const SingleBookInfo = ({ book }) => {
                         [+] Read more
                     </span>
                     <div className="flex flex-row items-center pt-5">
-                        <div className="w-28 h-24 hover:bg-teal-50 cursor-pointer">
-                            <Tooltip title="Write a review" className="pt-4">
-                                <div className="flex flex-col items-center ">
+                        <div className="w-28 h-24 hover:bg-teal-50 cursor-pointer pt-4">
+                            <div className="flex flex-col items-center ">
+                                <div className="w-[40px] h-[40px] mx-auto">
+                                    <Star
+                                        size={30}
+                                        className="text-teal-400 mx-auto"
+                                        weight="fill"
+                                    />
+                                </div>
+                                <div>Review</div>
+                            </div>
+                        </div>
+                        <div
+                            className="w-28 h-24 hover:bg-teal-50 cursor-pointer pt-4"
+                            onClick={readToggler}
+                        >
+                            {read ? (
+                                <div className="flex flex-col items-center">
                                     <div className="w-[40px] h-[40px] mx-auto">
-                                        <Star
+                                        <Eye
+                                            size={40}
+                                            className="text-teal-400  mx-auto"
+                                            weight="fill"
+                                        />
+                                    </div>
+                                    <div>Remove</div>
+                                </div>
+                            ) : (
+                                <div className="flex flex-col items-center cursor-pointer">
+                                    <div className="w-[40px] h-[40px] mx-auto">
+                                        <Eye
+                                            size={40}
+                                            className="text-teal-400 mx-auto"
+                                            weight="light"
+                                        />
+                                    </div>
+                                    <div>Read</div>
+                                </div>
+                            )}
+                        </div>
+                        <div
+                            className="w-28 h-24 hover:bg-teal-50 cursor-pointer pt-4"
+                            onClick={likeToggler}
+                        >
+                            {like ? (
+                                <div className="flex flex-col items-center">
+                                    <div className="w-[40px] h-[40px] mx-auto">
+                                        <Heart
                                             size={30}
                                             className="text-teal-400 mx-auto"
                                             weight="fill"
                                         />
                                     </div>
-                                    <div>Review</div>
+                                    <div>Remove</div>
                                 </div>
-                            </Tooltip>
-                        </div>
-                        <div
-                            className="w-28 h-24 hover:bg-teal-50 cursor-pointer"
-                            onClick={readToggler}
-                        >
-                            {read ? (
-                                <Tooltip title="Read" className="pt-4">
-                                    <div className="flex flex-col items-center">
-                                        <div className="w-[40px] h-[40px] mx-auto">
-                                            <Eye
-                                                size={40}
-                                                className="text-teal-400  mx-auto"
-                                                weight="fill"
-                                            />
-                                        </div>
-                                        <div>Remove</div>
-                                    </div>
-                                </Tooltip>
                             ) : (
-                                <Tooltip title="Remove" className="pt-4">
-                                    <div className="flex flex-col items-center cursor-pointer">
-                                        <div className="w-[40px] h-[40px] mx-auto">
-                                            <Eye
-                                                size={40}
-                                                className="text-teal-400 mx-auto"
-                                                weight="light"
-                                            />
-                                        </div>
-                                        <div>Read</div>
+                                <div className="flex flex-col items-center">
+                                    <div className="w-[40px] h-[40px] mx-auto">
+                                        <Heart
+                                            size={30}
+                                            className="text-teal-400 mx-auto"
+                                        />
                                     </div>
-                                </Tooltip>
+                                    <div>Like</div>
+                                </div>
                             )}
                         </div>
                         <div
-                            className="w-28 h-24 hover:bg-teal-50 cursor-pointer"
-                            onClick={likeToggler}
-                        >
-                            {like ? (
-                                <Tooltip title="Like" className="pt-4">
-                                    <div className="flex flex-col items-center">
-                                        <div className="w-[40px] h-[40px] mx-auto">
-                                            <Heart
-                                                size={30}
-                                                className="text-teal-400 mx-auto"
-                                                weight="fill"
-                                            />
-                                        </div>
-                                        <div>Remove</div>
-                                    </div>
-                                </Tooltip>
-                            ) : (
-                                <Tooltip title="Remove" className="pt-4">
-                                    <div className="flex flex-col items-center">
-                                        <div className="w-[40px] h-[40px] mx-auto">
-                                            <Heart
-                                                size={30}
-                                                className="text-teal-400 mx-auto"
-                                            />
-                                        </div>
-                                        <div>Like</div>
-                                    </div>
-                                </Tooltip>
-                            )}
-                        </div>
-                        <div
-                            className="w-28 h-24 hover:bg-teal-50 cursor-pointer"
+                            className="w-28 h-24 hover:bg-teal-50 cursor-pointer pt-4"
                             onClick={readListToggler}
                         >
                             {readList ? (
-                                <Tooltip title="Read List" className="pt-4">
-                                    <div className="flex flex-col items-center">
-                                        <div className="w-[40px] h-[40px] mx-auto">
-                                            <Books
-                                                size={40}
-                                                className="text-teal-400 mx-auto"
-                                                weight="fill"
-                                            />
-                                        </div>
-                                        <div>Remove</div>
+                                <div className="flex flex-col items-center">
+                                    <div className="w-[40px] h-[40px] mx-auto">
+                                        <Books
+                                            size={40}
+                                            className="text-teal-400 mx-auto"
+                                            weight="fill"
+                                        />
                                     </div>
-                                </Tooltip>
+                                    <div>Remove</div>
+                                </div>
                             ) : (
-                                <Tooltip title="Remove" className="pt-4">
-                                    <div className="flex flex-col items-center">
-                                        <div className="w-[40px] h-[40px] mx-auto">
-                                            <Books
-                                                size={40}
-                                                className="text-teal-400 mx-auto"
-                                                weight="thin"
-                                            />
-                                        </div>
-                                        <div>Read List</div>
+                                <div className="flex flex-col items-center">
+                                    <div className="w-[40px] h-[40px] mx-auto">
+                                        <Books
+                                            size={40}
+                                            className="text-teal-400 mx-auto"
+                                            weight="thin"
+                                        />
                                     </div>
-                                </Tooltip>
+                                    <div>Read List</div>
+                                </div>
                             )}
                         </div>
                     </div>
